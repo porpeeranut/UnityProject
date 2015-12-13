@@ -8,8 +8,9 @@ public class PlayerTransform : MonoBehaviour {
 	public bool playerTransform;
 	public float ChangeTime;
 	public GameObject firstBody;
+	private float maxTime;
 	void Start () {
-
+		maxTime = 10.0f;
 		playerObject = GameObject.FindGameObjectWithTag("Player");
 
 	}
@@ -24,19 +25,23 @@ public class PlayerTransform : MonoBehaviour {
 	}
 
 	public void changeTransform(){
-
 		playerTransform = true;
-			ChangeTime = 10.0f;
-			
+		ChangeTime = 10.0f;
+	}
+
+	public void addTime(float time){
+		ChangeTime += time;
+		if (ChangeTime > maxTime)
+			ChangeTime = maxTime;
 
 
 	}
-
 
 	public void decreaseTime() {
 		ChangeTime = ChangeTime - Time.deltaTime;
 		Debug.Log (ChangeTime);
 		if (ChangeTime <= 0.0f && playerTransform == true ) {
+			ChangeTime  = 0.0f;
 			playerTransform = false;
 			playerObject = GameObject.FindGameObjectWithTag("Player");
 			GameObject herotem2a=(GameObject) Instantiate (firstBody, playerObject.transform.position, playerObject.transform.rotation);

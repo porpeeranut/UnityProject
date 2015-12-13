@@ -55,26 +55,23 @@ public class PlayerControl : MonoBehaviour
 	public GameObject herotem2a;
 
 	//haveGun
-
-	private bool haveGun = false;
+	private bool shoot =false;
+	private bool haveGun = true;
 	private int shootBool;
 
-	// hp
-
-	private int hp;
-	private int tp;
 
 	//spread
 
 	private int spreadBool;
 	public GameObject  greenSmoke;
 
-	void Awake()
+	void Start() ///  old is Awake
 	{	
 
-		chkPlayerTransform = GameObject.Find ("playerTransform").GetComponent<PlayerTransform>().playerTransform;
+		chkPlayerTransform = GameObject.Find ("playerStatus").GetComponent<PlayerTransform>().playerTransform;
 		anim = GetComponent<Animator> ();
 		cameraTransform = Camera.main.transform;
+
 
 		speedFloat = Animator.StringToHash("Speed");
 		jumpBool = Animator.StringToHash("Jump");
@@ -100,9 +97,10 @@ public class PlayerControl : MonoBehaviour
 
 
 	void Update()
-	{
-		//Debug.Log ("Transform " + chkPlayerTransform);
-
+	{	Debug.Log (shoot);
+		if (Input.GetButtonDown ("Shoot"))
+			shoot = !shoot;
+		
 		// fly""
 		if (chkPlayerTransform == true) {
 			if (Input.GetButtonDown ("Fly"))
@@ -111,7 +109,7 @@ public class PlayerControl : MonoBehaviour
 			if (Input.GetButtonDown ("change")) {
 				chkPlayerTransform = true;
 				//Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-				GameObject.Find("playerTransform").GetComponent<PlayerTransform>().changeTransform();
+				GameObject.Find("playerStatus").GetComponent<PlayerTransform>().changeTransform();
 				herotem2a=(GameObject) Instantiate (Hero2, transform.position, transform.rotation);
 				Destroy(gameObject);
 				
@@ -181,7 +179,7 @@ public class PlayerControl : MonoBehaviour
 	void SpreadMangement()
 	{
 	
-		if (Input.GetButtonDown ("Spread")) {
+		if (Input.GetButtonDown ("Spread") && !isMoving) {
 		
 		
 			anim.SetBool (spreadBool, true);
@@ -204,7 +202,7 @@ public class PlayerControl : MonoBehaviour
 	{
 
 
-		if (!haveGun) { // chek already gun
+	/*	if (!haveGun) { // chek already gun
 			if (Input.GetButtonDown ("Shoot")) {
 				anim.SetBool (punchBool, true);
 				
@@ -214,23 +212,41 @@ public class PlayerControl : MonoBehaviour
 
 	
 		} else {
-			if (Input.GetButtonDown ("Shoot")) {
+			if (shoot) {
+
 				anim.SetBool (shootBool, true);
 				
-			} else {
+			}else {
 				anim.SetBool (shootBool, false);
+
 			}
 		
-		}
-	}
+		}*/
 
-		
+		if (Input.GetButtonDown ("Punch")) {
+			anim.SetBool (punchBool, true);
+			
+		} else {
+			anim.SetBool (punchBool, false);
+		}
+		if (aim) { // if(shoot)
+			
+			anim.SetBool (shootBool, true);
+			
+		}else {
+			anim.SetBool (shootBool, false);
+			
+		}
+
+	}
+	
+	
 
 	void MovementManagement(float horizontal, float vertical, bool running, bool sprinting)
 	{
 		Rotating(horizontal, vertical);
 
-		if(isMoving)
+		if(isMoving && !aim)
 		{
 			if(sprinting)
 			{
