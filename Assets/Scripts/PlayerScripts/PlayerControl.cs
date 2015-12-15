@@ -97,7 +97,7 @@ public class PlayerControl : MonoBehaviour
 
 
 	void Update()
-	{	Debug.Log (shoot);
+	{	//Debug.Log (shoot);
 		if (Input.GetButtonDown ("Shoot"))
 			shoot = !shoot;
 		

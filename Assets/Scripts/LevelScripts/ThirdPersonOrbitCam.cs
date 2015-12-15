@@ -50,7 +50,10 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 		//playerObject = GameObject.FindWithTag ("Player");
 		//player = playerObject.GetComponents<Transform>();
 
-		playerControl = player.GetComponent<PlayerControl> ();
+		playerObject = GameObject.FindGameObjectWithTag("Player");
+		player = playerObject.GetComponent<Transform>();
+		
+		playerControl = playerObject.GetComponent<PlayerControl> ();
 
 		relCameraPos = transform.position - player.position;
 		relCameraPosMag = relCameraPos.magnitude - 0.5f;
@@ -62,10 +65,12 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 	}
 
 	void LateUpdate()
-	{if (player == null) {
+	{
+		if (player == null) {
 			Debug.Log("playernull camera");
 			playerObject = GameObject.FindGameObjectWithTag("Player");
 			player = playerObject.GetComponent<Transform>();
+			playerControl = playerObject.GetComponent<PlayerControl> ();
 
 		}
 		angleH += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1) * horizontalAimingSpeed * Time.deltaTime;
@@ -87,7 +92,7 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 		cam.rotation = aimRotation;
 
 		if(playerControl.IsAiming())
-		{
+		{    Debug.Log ("isaim");
 			targetPivotOffset = aimPivotOffset;
 			targetCamOffset = aimCamOffset;
 		}
