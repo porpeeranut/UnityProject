@@ -26,7 +26,7 @@ public class bullet : MonoBehaviour {
 			obj.GetComponent<EnemyHealth>().GetDamage(2);
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
-			obj.GetComponent<SoldierController>().foundPlayer();
+			obj.GetComponent<SoldierController>().foundPlayer(true);
 		}
 		Destroy(gameObject);
 	}
