@@ -17,4 +17,15 @@ public class punchBox : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	void OnTriggerEnter(Collider obj){
+		
+		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Solider"))){
+			obj.GetComponent<EnemyHealth>().GetDamage(1);
+		}
+		if (obj.gameObject.CompareTag ("Soldier")) {
+			obj.GetComponent<SoldierController>().foundPlayer();
+		}
+		Destroy(gameObject);
+	}
 }

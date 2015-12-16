@@ -230,7 +230,7 @@ public class PlayerControl : MonoBehaviour
 		
 		}*/
 
-		if (punch) {
+		if (punch && !aim) {
 			Debug.Log("punch");
 			punchObject.GetComponent<punch>().punched();
 			anim.SetBool (punchBool, true);
