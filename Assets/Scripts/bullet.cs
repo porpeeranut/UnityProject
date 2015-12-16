@@ -21,12 +21,11 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-<<<<<<< HEAD
+
 		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Solider"))){
-=======
+
 		Debug.Log ("ttt");
-		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
->>>>>>> 761bd4b2f2b299425ddeaf585e7c55f34a7f83bd
+
 			obj.GetComponent<EnemyHealth>().GetDamage(2);
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
