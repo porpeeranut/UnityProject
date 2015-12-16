@@ -92,7 +92,7 @@ public class ThirdPersonOrbitCam : MonoBehaviour
 		cam.rotation = aimRotation;
 
 		if(playerControl.IsAiming())
-		{    Debug.Log ("isaim");
+		{    //Debug.Log ("isaim");
 			targetPivotOffset = aimPivotOffset;
 			targetCamOffset = aimCamOffset;
 		}

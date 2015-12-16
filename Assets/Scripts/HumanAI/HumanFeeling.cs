@@ -159,7 +159,7 @@ public class HumanFeeling : MonoBehaviour {
 		GameObject[] gos;
 		gos = GameObject.FindGameObjectsWithTag("Building");
 		GameObject closest = null;
-		Vector3 rangeClosest = null;
+		Vector3 rangeClosest = new Vector3(0.0f,0.0f,0.0f);
 		float distance = Mathf.Infinity;
 		Vector3 position = transform.position;
 		foreach (GameObject go in gos) {
@@ -168,7 +168,7 @@ public class HumanFeeling : MonoBehaviour {
 			if (curDistance < distance) {
 				closest = go;
 				distance = curDistance;
-				rangeClosest = distance;
+				//rangeClosest = distance;
 			}
 		}
 		return rangeClosest;
