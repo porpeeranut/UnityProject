@@ -21,7 +21,6 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		Debug.Log ("xxx");
 		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Solider"))){
 			obj.GetComponent<EnemyHealth>().GetDamage(2);
 			Destroy(gameObject);
