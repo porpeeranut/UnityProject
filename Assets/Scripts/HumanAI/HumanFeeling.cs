@@ -138,9 +138,9 @@ public class HumanFeeling : MonoBehaviour {
 		
 		
 	}
-	GameObject FindClosestEnemy() {
+	GameObject FindClosestBuilding() {
 		GameObject[] gos;
-		gos = GameObject.FindGameObjectsWithTag("Enemy");
+		gos = GameObject.FindGameObjectsWithTag("Building");
 		GameObject closest = null;
 		float distance = Mathf.Infinity;
 		Vector3 position = transform.position;
@@ -153,6 +153,25 @@ public class HumanFeeling : MonoBehaviour {
 			}
 		}
 		return closest;
+	}
+	Vector3 FindClosetBuildingRange(){
+
+		GameObject[] gos;
+		gos = GameObject.FindGameObjectsWithTag("Building");
+		GameObject closest = null;
+		Vector3 rangeClosest = null;
+		float distance = Mathf.Infinity;
+		Vector3 position = transform.position;
+		foreach (GameObject go in gos) {
+			Vector3 diff = go.transform.position - position;
+			float curDistance = diff.sqrMagnitude;
+			if (curDistance < distance) {
+				closest = go;
+				distance = curDistance;
+				rangeClosest = distance;
+			}
+		}
+		return rangeClosest;
 	}
 
 
