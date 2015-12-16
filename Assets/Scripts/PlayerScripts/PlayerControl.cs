@@ -130,7 +130,9 @@ public class PlayerControl : MonoBehaviour
 	
 	void FixedUpdate()
 	{
+	
 		anim.SetBool (aimBool, IsAiming());
+
 		anim.SetFloat(hFloat, h);
 		anim.SetFloat(vFloat, v);
 		
@@ -234,7 +236,7 @@ public class PlayerControl : MonoBehaviour
 			anim.SetBool (shootBool, true);
 			
 		}else {
-			anim.SetBool (shootBool, false);
+			anim.SetBool (shootBool, true);
 			
 		}
 
