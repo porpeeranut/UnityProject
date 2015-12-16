@@ -236,7 +236,7 @@ public class PlayerControl : MonoBehaviour
 			anim.SetBool (shootBool, true);
 			
 		}else {
-			anim.SetBool (shootBool, true);
+			anim.SetBool (shootBool, false);
 			
 		}
 
