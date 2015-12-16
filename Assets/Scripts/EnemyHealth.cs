@@ -9,9 +9,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	
 	void Awake () {
-
-		maxHealth = 10;
-		health = maxHealth;		
+		health = maxHealth;
 		isDead = false;
 	}
 	

@@ -21,10 +21,13 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		Debug.Log ("xxx");
-		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Solider"))){
+		Debug.Log ("ttt");
+		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
 			obj.GetComponent<EnemyHealth>().GetDamage(2);
-			Destroy(gameObject);
 		}
+		if (obj.gameObject.CompareTag ("Soldier")) {
+			obj.GetComponent<SoldierController>().foundPlayer();
+		}
+		Destroy(gameObject);
 	}
 }
