@@ -22,9 +22,12 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		if(obj.gameObject.CompareTag("Human") || (obj.gameObject.CompareTag("Human")){
-		obj.GetComponent<PlayerHealth>().AddHealth(2);
+		Debug.Log ("xxx");
+		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Human"))){
+			obj.GetComponent<EnemyHealth>().GetDamage(2);
 			Destroy(gameObject);
 	}
 	}
+
+
 		}
