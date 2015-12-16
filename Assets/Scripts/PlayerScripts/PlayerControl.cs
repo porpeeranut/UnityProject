@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
 	private float h;
 	private float v;
 
-	private bool aim;
+
 
 	private bool run;
 	private bool sprint;
@@ -55,8 +55,9 @@ public class PlayerControl : MonoBehaviour
 	public GameObject herotem2a;
 
 	//haveGun
+	public bool aim;
 	private bool shoot =false;
-	private bool haveGun = true;
+	public bool haveGun = true;
 	private int shootBool;
 
 

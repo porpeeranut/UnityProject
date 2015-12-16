@@ -20,4 +20,11 @@ public class bullet : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
-}
+
+	void OnTriggerEnter(Collider obj){
+		if(obj.gameObject.CompareTag("Human") || (obj.gameObject.CompareTag("Human")){
+		obj.GetComponent<PlayerHealth>().AddHealth(2);
+			Destroy(gameObject);
+	}
+	}
+		}
