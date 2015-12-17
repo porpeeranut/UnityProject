@@ -31,6 +31,7 @@ public class SoldierController : MonoBehaviour {
 					navAgent.Stop ();
 					animator.SetBool ("shoot", true);
 					animator.SetBool ("run", false);
+					GetComponent<SoldierBulletSpawn>().shoot();
 				} else if (location.magnitude <= rangeToLostPlayer){
 					rangeToStopAtPlayer = Random.Range (minRange, maxRange);
 					navAgent.SetDestination (player.position);

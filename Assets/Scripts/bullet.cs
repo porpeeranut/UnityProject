@@ -7,6 +7,7 @@ public class bullet : MonoBehaviour {
 	float lifeTime;
 	float timer;
 	public float initialSpeed;
+	public int damage;
 
 	void Start () {
 		lifeTime = 1.5f;
@@ -21,9 +22,8 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		Debug.Log ("ttt");
 		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
-			obj.GetComponent<EnemyHealth>().GetDamage(2);
+			obj.GetComponent<EnemyHealth>().GetDamage(damage);
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
 			obj.GetComponent<SoldierController>().foundPlayer(true);

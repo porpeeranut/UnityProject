@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0a868bcfbfe37004d996f46f4a3d454f
-timeCreated: 1450280328
+timeCreated: 1450300442
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -575,21 +575,6 @@ ModelImporter:
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: handgunhandleft
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: handgunhandright
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: Stormtrooper
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Armature
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -605,6 +590,51 @@ ModelImporter:
       rotation: {x: -5.66244012e-07, y: 0, z: -1, w: 0}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
+    - name: pelvis
+      position: {x: -.451777995, y: 0, z: 0}
+      rotation: {x: 3.53552679e-07, y: 3.535541e-07, z: -.707105339, w: .7071082}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leg_thigh_left
+      position: {x: -.146179006, y: .00167200004, z: -.211077005}
+      rotation: {x: -1.22464685e-22, y: 1.99999999e-06, z: 1, w: -6.12323426e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leg_knee_left
+      position: {x: .81508702, y: .069224, z: -.0967380032}
+      rotation: {x: 1.07541524e-07, y: .611627638, z: .785737574, w: -.0923476964}
+      scale: {x: 1.00000024, y: .999999523, z: .999999344}
+      transformModified: 1
+    - name: leg_ankle_left
+      position: {x: -.832333028, y: 0, z: 0}
+      rotation: {x: -.575354755, y: -.307288706, z: -.481633782, w: .585294366}
+      scale: {x: .999999762, y: .999999702, z: .999999821}
+      transformModified: 1
+    - name: leg_toes_left
+      position: {x: -.304399014, y: 0, z: 0}
+      rotation: {x: .0318665504, y: .0363726653, z: -.22552152, w: .973037302}
+      scale: {x: .999998748, y: .999999046, z: .999998868}
+      transformModified: 1
+    - name: leg_thigh_right
+      position: {x: -.146178007, y: .00167300005, z: .211079001}
+      rotation: {x: -1.22464685e-22, y: 1.99999999e-06, z: 1, w: -6.12323426e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: leg_knee_right
+      position: {x: .815088987, y: .0692230016, z: .0967369974}
+      rotation: {x: 2.42429252e-07, y: -.611621976, z: .785741925, w: -.0923481658}
+      scale: {x: 1.00000036, y: 1, z: .999999881}
+      transformModified: 1
+    - name: leg_ankle_right
+      position: {x: -.832332015, y: 0, z: 0}
+      rotation: {x: .575352907, y: .30728513, z: -.481639266, w: .585293651}
+      scale: {x: .99999994, y: 1.00000048, z: .999999821}
+      transformModified: 1
+    - name: leg_toes_right
+      position: {x: -.304399014, y: 0, z: 0}
+      rotation: {x: -.0300784297, y: -.0353958867, z: -.226658151, w: .972866178}
+      scale: {x: 1.0000006, y: .999999166, z: 1.00000024}
+      transformModified: 1
     - name: spine_lower
       position: {x: -.451777995, y: -.146368995, z: 0}
       rotation: {x: 3.53546483e-07, y: 4.59619469e-06, z: .707107842, w: .707105696}
@@ -613,21 +643,6 @@ ModelImporter:
     - name: spine_upper
       position: {x: -.275752991, y: 0, z: 0}
       rotation: {x: -3.50000005e-06, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: head_neck_lower
-      position: {x: -.787159979, y: -1.99999999e-06, z: 9.99999997e-07}
-      rotation: {x: -2.49999994e-06, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: head_neck_upper
-      position: {x: -.0843800008, y: -9.99999997e-07, z: 0}
-      rotation: {x: 4.50000016e-06, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: holster_2_
-      position: {x: -.440524995, y: .287081987, z: -.000146000006}
-      rotation: {x: 1.50000005e-06, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: arm_shoulder_1_left
@@ -647,11 +662,6 @@ ModelImporter:
       transformModified: 1
     - name: arm_wrist_left
       position: {x: .350997001, y: -.0649069995, z: -.465840012}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    - name: weapon_left
-      position: {x: .188483998, y: -.0275309999, z: -.101154}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
@@ -717,13 +727,18 @@ ModelImporter:
       transformModified: 1
     - name: arm_finger_5b_left
       position: {x: -.0765810013, y: 0, z: 0}
-      rotation: {x: .0320907161, y: -.0343667232, z: -.0077839978, w: .998863578}
+      rotation: {x: .0320907198, y: -.0343667269, z: -.00778399827, w: .998863637}
       scale: {x: .999999583, y: 1.00000083, z: 1.00000012}
       transformModified: 1
     - name: arm_finger_5c_left
       position: {x: -.0379169993, y: 0, z: 0}
       rotation: {x: .00437816186, y: -.00243572611, z: -.000158838011, w: .999987423}
       scale: {x: .99999994, y: 1.00000143, z: 1.00000024}
+      transformModified: 1
+    - name: weapon_left
+      position: {x: .188483998, y: -.0275309999, z: -.101154}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     - name: arm_shoulder_1_right
       position: {x: -.624158025, y: -.105365999, z: .0485239998}
@@ -745,11 +760,6 @@ ModelImporter:
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: weapon_right
-      position: {x: .200280994, y: -.0253379997, z: .085830003}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: arm_finger_1a_right
       position: {x: .0855240002, y: -.117137, z: .035007}
       rotation: {x: .0915140286, y: .596051335, z: .613327801, w: .510075569}
@@ -762,7 +772,7 @@ ModelImporter:
       transformModified: 1
     - name: arm_finger_2a_right
       position: {x: .119961001, y: -.0784870014, z: .127252996}
-      rotation: {x: .00241093291, y: .919632673, z: .194246963, w: .341376632}
+      rotation: {x: .00241093314, y: .919632733, z: .194246978, w: .341376662}
       scale: {x: 1.00000012, y: .999999702, z: .999999821}
       transformModified: 1
     - name: arm_finger_2b_right
@@ -792,7 +802,7 @@ ModelImporter:
       transformModified: 1
     - name: arm_finger_4a_right
       position: {x: .118899003, y: .0106229996, z: .129537001}
-      rotation: {x: .0662153661, y: .931417346, z: -.0684452355, w: .351272643}
+      rotation: {x: .0662153736, y: .931417406, z: -.0684452429, w: .351272672}
       scale: {x: .999999583, y: 1.00000012, z: .999999762}
       transformModified: 1
     - name: arm_finger_4b_right
@@ -820,50 +830,40 @@ ModelImporter:
       rotation: {x: -.00774074951, y: .00225334172, z: .000223950003, w: .999967515}
       scale: {x: .999999285, y: 1.00000095, z: .999998987}
       transformModified: 1
-    - name: pelvis
-      position: {x: -.451777995, y: 0, z: 0}
-      rotation: {x: 3.53552679e-07, y: 3.535541e-07, z: -.707105339, w: .7071082}
+    - name: weapon_right
+      position: {x: .200280994, y: -.0253379997, z: .085830003}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: leg_thigh_left
-      position: {x: -.146179006, y: .00167200004, z: -.211077005}
-      rotation: {x: -1.22464685e-22, y: 1.99999999e-06, z: 1, w: -6.12323426e-17}
+    - name: head_neck_lower
+      position: {x: -.787159979, y: -1.99999999e-06, z: 9.99999997e-07}
+      rotation: {x: -2.49999994e-06, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: leg_knee_left
-      position: {x: .81508702, y: .069224, z: -.0967380032}
-      rotation: {x: 1.07541524e-07, y: .611627638, z: .785737574, w: -.0923476964}
-      scale: {x: 1.00000024, y: .999999523, z: .999999344}
-      transformModified: 1
-    - name: leg_ankle_left
-      position: {x: -.832333028, y: 0, z: 0}
-      rotation: {x: -.575354755, y: -.307288706, z: -.481633782, w: .585294366}
-      scale: {x: .999999762, y: .999999702, z: .999999821}
-      transformModified: 1
-    - name: leg_toes_left
-      position: {x: -.304399014, y: 0, z: 0}
-      rotation: {x: .0318665504, y: .0363726653, z: -.22552152, w: .973037302}
-      scale: {x: .999998748, y: .999999046, z: .999998868}
-      transformModified: 1
-    - name: leg_thigh_right
-      position: {x: -.146178007, y: .00167300005, z: .211079001}
-      rotation: {x: -1.22464685e-22, y: 1.99999999e-06, z: 1, w: -6.12323426e-17}
+    - name: head_neck_upper
+      position: {x: -.0843800008, y: -9.99999997e-07, z: 0}
+      rotation: {x: 4.50000016e-06, y: 0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: leg_knee_right
-      position: {x: .815088987, y: .0692230016, z: .0967369974}
-      rotation: {x: 2.42429252e-07, y: -.611621976, z: .785741925, w: -.0923481658}
-      scale: {x: 1.00000036, y: 1, z: .999999881}
+    - name: holster_2_
+      position: {x: -.440524995, y: .287081987, z: -.000146000006}
+      rotation: {x: 1.50000005e-06, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: leg_ankle_right
-      position: {x: -.832332015, y: 0, z: 0}
-      rotation: {x: .575352907, y: .30728513, z: -.481639266, w: .585293651}
-      scale: {x: .99999994, y: 1.00000048, z: .999999821}
+    - name: handgunhandleft
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    - name: leg_toes_right
-      position: {x: -.304399014, y: 0, z: 0}
-      rotation: {x: -.0300784297, y: -.0353958867, z: -.226658151, w: .972866178}
-      scale: {x: 1.0000006, y: .999999166, z: 1.00000024}
+    - name: handgunhandright
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Stormtrooper
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
       transformModified: 1
     armTwist: .5
     foreArmTwist: .5
