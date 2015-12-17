@@ -41,8 +41,8 @@ public class SoldierController : MonoBehaviour {
 								animator.SetBool ("run", false);
 								GetComponent<SoldierBulletSpawn>().shoot();
 							} else {
-								int i = Random.Range(1 , 3);
-								Vector3 pos = transform.position+(transform.right*3);
+								//int i = Random.Range(1 , 3);
+								Vector3 pos = transform.position-(transform.right*3);
 //								if(i==2) {
 //									pos = transform.position-(transform.right*2);
 //								}
@@ -50,20 +50,6 @@ public class SoldierController : MonoBehaviour {
 							}
 						}
 					}
-
-//					RaycastHit hit1;
-//					RaycastHit hit2;
-//					if (Physics.Raycast(transform.position+(transform.right*0.5f)+(transform.up*1.8f), transform.forward, out hit1, rangeToStopAtPlayer)) {
-//						//Physics.Raycast(transform.position+(transform.up*1.8f), transform.forward, out hit2, rangeToStopAtPlayer);
-//						if(hit1.transform == player) {
-//							navAgent.Stop ();
-//							animator.SetBool ("shoot", true);
-//							animator.SetBool ("run", false);
-//							GetComponent<SoldierBulletSpawn>().shoot();
-//						} else if (hit1.collider.tag == gameObject.tag) {
-//							runToDestination(transform.position+(transform.right*1));
-//						}
-//					}
 				} else if (location.magnitude <= rangeToLostPlayer){
 					rangeToStopAtPlayer = Random.Range (minRange, maxRange);
 					runToDestination(player.position);

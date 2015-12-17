@@ -13,16 +13,14 @@ public class bullet : MonoBehaviour {
 	AudioSource buttonSound;
 
 	void Start () {
-
 			lifeTime = 2.0f;
 			startTime = Time.time;
 			GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
 			buttonSound = GetComponent<AudioSource>();
 			audioClip = buttonSound.clip; 
-			buttonSound.Play();
-		
+			buttonSound.Play();	
 	}
-	
+
 	void Update () {
 		if(Time.time >= (startTime+lifeTime)){
 			Destroy(gameObject);
