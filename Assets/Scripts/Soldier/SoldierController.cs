@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SoldierController : MonoBehaviour {
 
+	public GameObject yellArea;
 	bool isFoundPlayer = false;
 	float minRange = 3.0f;
 	float maxRange = 10.0f;
@@ -54,6 +55,9 @@ public class SoldierController : MonoBehaviour {
 
 	public void foundPlayer (bool found) {
 		if (found) {
+			if (!isFoundPlayer) {
+				Instantiate(yellArea, transform.position, transform.rotation);
+			}
 			isFoundPlayer = found;
 			navAgent.speed = runSpeed;
 			animator.SetBool ("walk", false);
