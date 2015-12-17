@@ -34,12 +34,12 @@ public class SoldierController : MonoBehaviour {
 	void Update () {
 		if (player != null) {
 			Vector3 location = transform.position - player.position;
+			if (GameObject.FindGameObjectWithTag("playerstatus").GetComponent<PlayerHealth>().isDead) {
+				animator.SetBool ("victory", true);
+				return;
+			}
 			if (isFoundPlayer) {
 				if (GetComponent<EnemyHealth>().isDead) {
-					return;
-				}
-				if (GameObject.FindGameObjectWithTag("playerstatus").GetComponent<PlayerHealth>().isDead) {
-					animator.SetBool ("victory", true);
 					return;
 				}
 				if (location.magnitude <= rangeToStopAtPlayer) {

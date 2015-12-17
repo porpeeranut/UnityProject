@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Die(){
 		GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetBool ("Die", true);
 		isDead = true;
-		Invoke("restartGame", 5.5f);
+		Invoke("restartGame", 10f);
 		//Destroy(gameObject);
 	}
 
