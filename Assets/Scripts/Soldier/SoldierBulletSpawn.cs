@@ -18,7 +18,7 @@ public class SoldierBulletSpawn : MonoBehaviour {
 				rotation.eulerAngles.z
 				);
 
-			Instantiate(bullet, transform.position+transform.forward+(transform.up*1.8f), rotation);
+			Instantiate(bullet, transform.position+transform.forward+(transform.up*1.7f), rotation);
 			Invoke("stopDelay", 0.5f);
 		}
 	}
