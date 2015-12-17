@@ -36,7 +36,14 @@ public class HumanFeeling : MonoBehaviour {
 	int activeBd = 0;
 	private Vector3 bdpos = new Vector3(0.0f,0.0f,0.0f);
 
-
+	//Human Hp
+	float HumanHealth = 50.0f;
+	public void onDamge(float damage){
+		HumanHealth = HumanHealth - damage;
+		if (HumanHealth <= 0) {
+			//turn on zombie
+		}
+	}
 	void Awake ()
 	{
 		controller = GetComponent<CharacterController>();
@@ -278,6 +285,7 @@ public class HumanFeeling : MonoBehaviour {
 			//Debug.Log ("x: "+randomDirection.x + " y: "+randomDirection.z + " testmove: "+testmove + " maxmove: "+maxmove +" per:" + percentageWalk +"%");
 			
 		}
+		Debug.Log (" timeawlk "+timewalk + " counterTakeBack: "+countTakeBack +" percentageWalk: "+ percentageWalk);
 		if (activeBd == 1) {
 			//Vector3 a = transform.position - bdpos;
 			countTakeBack = countTakeBack - Time.deltaTime;
@@ -285,6 +293,8 @@ public class HumanFeeling : MonoBehaviour {
 			if( countTakeBack <= 1.0f ){
 				activeBd = 0;
 				countTakeBack = 3.0f;
+				timewalk = 0;
+
 			}
 
 			randomDirection = -1*(randomDirection);
@@ -293,25 +303,25 @@ public class HumanFeeling : MonoBehaviour {
 
 		}
 		if (percentageWalk >= 50 && percentageWalk < 60) {
-			if(timewalk > 1.6f){
+			if(timewalk > 2.0f){
 				ja.SetBool("walk",false);
 			}
 			
 		}else if (percentageWalk >= 40 && percentageWalk < 50) {
-			if(timewalk > 1.8f){
+			if(timewalk > 2.0f){
 				ja.SetBool("walk",false);
 			}
 		}else if (percentageWalk >= 30 && percentageWalk < 40) {
-			if(timewalk > 1.0f){
+			if(timewalk > 1.7f){
 				ja.SetBool("walk",false);
 			}
 		}  
 		else if (percentageWalk >= 20 && percentageWalk < 30) {
-			if(timewalk > 0.7f){
+			if(timewalk > 0.9f){
 				ja.SetBool("walk",false);
 			}
 		} else if (percentageWalk >= 0 && percentageWalk < 20) {
-			if(timewalk > 0.3f){
+			if(timewalk > 0.6f){
 				ja.SetBool("walk",false);
 			}
 		}

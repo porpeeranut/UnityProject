@@ -6,11 +6,9 @@ public class PlayerHealth : MonoBehaviour {
 	public int health;
 	public int maxHealth;
 	public bool isDead;
-	private Animator playerAnimator;
 
 	void Awake () {
-		playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-		maxHealth = 100;
+		maxHealth = 1000;
 		health = maxHealth;
 		isDead = false;
 	}
@@ -33,7 +31,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void Die(){
-		playerAnimator.SetBool ("Die", true);
+		GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetBool ("Die", true);
 		isDead = true;
 		//Destroy(gameObject);
 	}

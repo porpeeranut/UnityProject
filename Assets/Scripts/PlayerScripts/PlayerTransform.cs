@@ -48,8 +48,8 @@ public class PlayerTransform : MonoBehaviour {
 	}
 
 	public void decreaseTime() {
+
 		ChangeTime = ChangeTime - 0.01f;
-		Debug.Log (ChangeTime);
 		if (ChangeTime <= 0.0f && playerTransform == true ) {
 			ChangeTime  = 0.0f;
 			playerTransform = false;

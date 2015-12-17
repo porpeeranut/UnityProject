@@ -12,8 +12,6 @@ public class punchBox : MonoBehaviour {
 	void Start () {
 		lifeTime = 1.0f;
 		startTime = Time.time;
-
-
 	}
 	
 	// Update is called once per frame
