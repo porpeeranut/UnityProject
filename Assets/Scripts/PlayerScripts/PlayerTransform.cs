@@ -8,8 +8,9 @@ public class PlayerTransform : MonoBehaviour {
 	public bool playerTransform;
 	public float ChangeTime;
 	public GameObject firstBody;
-	private float maxTime;
-	void Start () {
+	public float maxTime;
+	void Awake () {
+		ChangeTime = 0.0f;
 		maxTime = 10.0f;
 		playerObject = GameObject.FindGameObjectWithTag("Player");
 
