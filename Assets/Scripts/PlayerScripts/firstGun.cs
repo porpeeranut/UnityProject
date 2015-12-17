@@ -38,8 +38,10 @@ public class firstGun : MonoBehaviour {
 
 	void  Shooting(){
 		if ( magazine > 0 ){
-			RaycastHit screenRayInfo;
-				if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height/2f, 0)), out screenRayInfo, 500)) {
+
+		RaycastHit screenRayInfo;
+		if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height/2f, 0)), out screenRayInfo, 500)) {
+			Debug.Log(screenRayInfo.collider.tag);
 			transform.LookAt(screenRayInfo.point);
 				Debug.Log (isBullet2);
 					if(isBullet2){
