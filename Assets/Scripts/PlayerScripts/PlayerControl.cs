@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
 	private float h;
 	private float v;
 
-	private bool aim;
+
 
 	private bool run;
 	private bool sprint;
@@ -55,10 +55,14 @@ public class PlayerControl : MonoBehaviour
 	public GameObject herotem2a;
 
 	//haveGun
+	public bool aim;
 	private bool shoot =false;
-	private bool haveGun = true;
+	public bool haveGun = true;
 	private int shootBool;
+	//punch
 
+	public bool punch;
+	public GameObject punchObject;
 
 	//spread
 
@@ -71,7 +75,7 @@ public class PlayerControl : MonoBehaviour
 		chkPlayerTransform = GameObject.Find ("playerStatus").GetComponent<PlayerTransform>().playerTransform;
 		anim = GetComponent<Animator> ();
 		cameraTransform = Camera.main.transform;
-
+		punchObject = GameObject.FindGameObjectWithTag("punch");
 
 		speedFloat = Animator.StringToHash("Speed");
 		jumpBool = Animator.StringToHash("Jump");
@@ -118,12 +122,13 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		aim = Input.GetButton ("Aim");
+		punch = Input.GetButton ("Punch");
 		h = Input.GetAxis ("Horizontal");
 		v = Input.GetAxis ("Vertical");
 		run = Input.GetButton ("Run");
 		sprint = Input.GetButton ("Sprint");
 		isMoving = Mathf.Abs (h) > 0.1 || Mathf.Abs (v) > 0.1;
-		isPunch = Input.GetButton ("Punch");
+		//isPunch = Input.GetButton ("Punch");
 
 	
 	}
@@ -225,7 +230,9 @@ public class PlayerControl : MonoBehaviour
 		
 		}*/
 
-		if (Input.GetButtonDown ("Punch")) {
+		if (punch && !aim) {
+			Debug.Log("punch");
+			punchObject.GetComponent<punch>().punched();
 			anim.SetBool (punchBool, true);
 			
 		} else {
@@ -236,7 +243,7 @@ public class PlayerControl : MonoBehaviour
 			anim.SetBool (shootBool, true);
 			
 		}else {
-			anim.SetBool (shootBool, true);
+			anim.SetBool (shootBool, false);
 			
 		}
 

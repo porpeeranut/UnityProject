@@ -95,7 +95,7 @@ public class HumanFeeling : MonoBehaviour {
 
 
 		//enemyAgent.SetDestination(player);
-		Debug.Log (amount + " w: " + walkPoint + " stamina: "+stamina);
+//		Debug.Log (amount + " w: " + walkPoint + " stamina: "+stamina);
 	}
 	void normal(){
 		if((walkPoint-transform.position).magnitude<5){

@@ -9,8 +9,8 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	void Awake () {
-		//health = maxHealth;
-		health = 100;
+		maxHealth = 100;
+		health = maxHealth;
 		isDead = false;
 	}
 	
