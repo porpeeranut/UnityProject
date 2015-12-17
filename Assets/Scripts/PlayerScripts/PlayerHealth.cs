@@ -6,16 +6,20 @@ public class PlayerHealth : MonoBehaviour {
 	public int health;
 	public int maxHealth;
 	public bool isDead;
+	private Animator playerAnimator;
 
 
 	void Awake () {
+		playerAnimator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 		maxHealth = 100;
 		health = maxHealth;
 		isDead = false;
 	}
 	
 	void Update () {
+
 		}
+
 
 	public void GetDamage(int damage){
 
@@ -36,8 +40,8 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void Die(){
-
-		Destroy(gameObject);
+		playerAnimator.SetBool ("Die", true);
+		//Destroy(gameObject);
 
 	}
 }

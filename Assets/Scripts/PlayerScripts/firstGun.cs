@@ -11,6 +11,7 @@ public class firstGun : MonoBehaviour {
 
 	void Start () {
 	//	InvokeRepeating("Shooting",1.0f,0.1f);
+		isBullet2 = true;
 		magazine = 50;
 		player = GameObject.FindGameObjectWithTag("Player");
 	}
@@ -37,23 +38,22 @@ public class firstGun : MonoBehaviour {
 
 	void  Shooting(){
 		if ( magazine > 0 ){
-		RaycastHit screenRayInfo;
-		if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height/2f, 0)), out screenRayInfo, 500)) {
+			RaycastHit screenRayInfo;
+				if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height/2f, 0)), out screenRayInfo, 500)) {
 			transform.LookAt(screenRayInfo.point);
 				Debug.Log (isBullet2);
-				if(isBullet2){
-				GameObject gunBullet = (GameObject)Instantiate(bullet2, transform.position, transform.rotation);
-				}else {
-				GameObject gunBullet = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
+					if(isBullet2){
+						GameObject gunBullet = (GameObject)Instantiate(bullet2, transform.position, transform.rotation);
+					}else {
+						GameObject gunBullet = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
 					}
-				magazine -= 1;
+						magazine -= 1;
 				}
-	}
-		else {
+	} else {
 			
 			Debug.Log("Relaod");
-}
-}
+			}
+	}
 
 	void addMagazine(int tmp){
 		magazine =+ tmp;
