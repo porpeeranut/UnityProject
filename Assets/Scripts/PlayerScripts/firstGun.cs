@@ -8,12 +8,17 @@ public class firstGun : MonoBehaviour {
 	public bool isBullet2 = false;
 	private GameObject player;
 	public int magazine;
+	public AudioClip audioClip;
+	AudioSource magazineSound;
 
 	void Start () {
 	//	InvokeRepeating("Shooting",1.0f,0.1f);
 		isBullet2 = true;
 		magazine = 50;
 		player = GameObject.FindGameObjectWithTag("Player");
+		magazineSound = GetComponent<AudioSource>();
+		audioClip = magazineSound.clip; 
+
 	}
 
 	void Update () {
@@ -52,7 +57,7 @@ public class firstGun : MonoBehaviour {
 						magazine -= 1;
 				}
 	} else {
-			
+			magazineSound.Play();
 			Debug.Log("Relaod");
 			}
 	}
