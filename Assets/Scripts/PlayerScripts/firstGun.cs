@@ -7,20 +7,23 @@ public class firstGun : MonoBehaviour {
 	public GameObject bullet2;
 	public bool isBullet2 = false;
 	private GameObject player;
-	public int magazine;
+	public float magazine; 
+	public float maxMag;
 	public AudioClip audioClip;
 	AudioSource magazineSound;
 
-	void Start () {
+	void Awake () {
 	//	InvokeRepeating("Shooting",1.0f,0.1f);
-		isBullet2 = true;
-		magazine = 50;
+		isBullet2 = false;
+		maxMag = 100;
+		magazine = maxMag;
 		player = GameObject.FindGameObjectWithTag("Player");
 		magazineSound = GetComponent<AudioSource>();
 		audioClip = magazineSound.clip; 
 	}
 
 	void Update () {
+//		Debug.Log (magazine);
 		if (player == null) {
 			Debug.Log("playernull camera");
 			player = GameObject.FindGameObjectWithTag("Player");
@@ -53,8 +56,11 @@ public class firstGun : MonoBehaviour {
 		}
 	}
 
-	void addMagazine(int tmp){
+	public void addMagazine(int tmp){
 		magazine =+ tmp;
+		if (magazine > maxMag) {
+			magazine = maxMag;
+		}
 	}
 
 	void bullet2Time() {
