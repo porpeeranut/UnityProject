@@ -11,10 +11,12 @@ public class bullet : MonoBehaviour {
 	float timer;
 
 	void Start () {
-		lifeTime = 2.0f;
-		startTime = Time.time;
-		GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
-	}
+
+			lifeTime = 2.0f;
+			startTime = Time.time;
+			GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
+
+		}
 
 	void Update () {
 		if(Time.time >= (startTime+lifeTime)){
