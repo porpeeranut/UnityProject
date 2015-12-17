@@ -105,22 +105,21 @@ public class PlayerControl : MonoBehaviour
 	{	//Debug.Log (shoot);
 		if (Input.GetButtonDown ("Shoot"))
 			shoot = !shoot;
-		
-		// fly""
 		if (chkPlayerTransform == true) {
 			if (Input.GetButtonDown ("Fly"))
 				fly = !fly;
 		} else {
 			if (Input.GetButtonDown ("change")) {
+				if(GameObject.Find("playerStatus").GetComponent<PlayerTransform>().waitTransform){
 				chkPlayerTransform = true;
-				//Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 				GameObject.Find("playerStatus").GetComponent<PlayerTransform>().changeTransform();
 				herotem2a=(GameObject) Instantiate (Hero2, transform.position, transform.rotation);
 				Destroy(gameObject);
-				
+				}
 				
 			}
 		}
+
 
 		aim = Input.GetButton ("Aim");
 		punch = Input.GetButton ("Punch");
