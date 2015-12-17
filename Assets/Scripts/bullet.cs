@@ -9,11 +9,16 @@ public class bullet : MonoBehaviour {
 	float startTime;
 	float lifeTime;
 	float timer;
+	public AudioClip audioClip;
+	AudioSource buttonSound;
 
 	void Start () {
-		lifeTime = 2.0f;
-		startTime = Time.time;
-		GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
+			lifeTime = 2.0f;
+			startTime = Time.time;
+			GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
+			buttonSound = GetComponent<AudioSource>();
+			audioClip = buttonSound.clip; 
+			buttonSound.Play();	
 	}
 
 	void Update () {
@@ -29,8 +34,11 @@ public class bullet : MonoBehaviour {
 		if (obj.gameObject.CompareTag ("Soldier")) {
 			obj.GetComponent<SoldierController>().foundPlayer(true);
 		}
+
+		Destroy(gameObject,audioClip.length);
+
 		//Instantiate(particleEffect, transform.position, transform.rotation);
 		//Destroy(gameObject,audioClip.length);
-		Destroy(gameObject);
+
 	}
 }
