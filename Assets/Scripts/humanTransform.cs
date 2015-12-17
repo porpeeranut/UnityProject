@@ -46,6 +46,7 @@ public class humanTransform : MonoBehaviour {
 		
 		isTransform = true;
 		GameObject tmpZombie=(GameObject) Instantiate (Zombie, transform.position, transform.rotation);
+		gameObject.GetComponent<zombie> ().activeZombie = 0;
 		Destroy(gameObject);
 		
 	}
