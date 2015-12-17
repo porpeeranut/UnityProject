@@ -27,6 +27,9 @@ public class SoldierController : MonoBehaviour {
 		if (player != null) {
 			Vector3 location = transform.position - player.position;
 			if (isFoundPlayer) {
+				if (GetComponent<EnemyHealth>().isDead) {
+					return;
+				}
 				navAgent.transform.LookAt (player.position);
 				if (location.magnitude <= rangeToStopAtPlayer) {
 					RaycastHit hit1;
@@ -73,6 +76,7 @@ public class SoldierController : MonoBehaviour {
 		animator.SetBool ("shoot", false);
 		animator.SetBool ("run", true);
 	}
+
 	public void foundPlayer (bool found) {
 		if (found) {
 			if (!isFoundPlayer) {
