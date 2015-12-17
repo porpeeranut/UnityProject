@@ -40,7 +40,6 @@ public class PlayerTransform : MonoBehaviour {
 
 	public void decreaseTime() {
 		ChangeTime = ChangeTime - Time.deltaTime;
-		Debug.Log (ChangeTime);
 		if (ChangeTime <= 0.0f && playerTransform == true ) {
 			ChangeTime  = 0.0f;
 			playerTransform = false;
