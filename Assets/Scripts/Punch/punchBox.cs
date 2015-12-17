@@ -24,18 +24,19 @@ public class punchBox : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		
+
+
 		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
 			obj.GetComponent<EnemyHealth>().GetDamage(1);
 			punchSound = GetComponent<AudioSource>();
 			audioClip = punchSound.clip; 
-			punchSound.Play();	
+			punchSound.Play(); 
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
 			obj.GetComponent<SoldierController>().foundPlayer(true);
 
 		}
-		punchSound.Play ();
-		Destroy(gameObject);
+	
+		Destroy(gameObject,audioClip.length);
 	}
 }
