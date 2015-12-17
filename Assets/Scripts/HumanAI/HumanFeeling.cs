@@ -4,7 +4,8 @@ using System.Collections;
 public class HumanFeeling : MonoBehaviour {
 	//fleeing
 	float amount;
-	public GameObject player;
+	//public GameObject player;
+	private GameObject player;
 	Vector3 direction;
 	Vector3 runPoint;
 	Vector3 walkPoint;
@@ -27,7 +28,11 @@ public class HumanFeeling : MonoBehaviour {
 	public float speed2 = 5;
 	public float directionChangeInterval = 1;
 	public float maxHeadingChange = 30;
-	
+
+	//zombie tranfrom
+	private bool transformZombie = false;
+	public GameObject Zombie;
+
 
 	CharacterController controller;
 	float heading;
@@ -41,8 +46,15 @@ public class HumanFeeling : MonoBehaviour {
 	public void onDamge(float damage){
 		HumanHealth = HumanHealth - damage;
 		if (HumanHealth <= 0) {
-			//turn on zombie
+			Transformation();
 		}
+	}
+	void Transformation(){
+		
+		transformZombie = true;
+		GameObject tmpZombie=(GameObject) Instantiate (Zombie, transform.position, transform.rotation);
+		Destroy(gameObject);
+		
 	}
 	void Awake ()
 	{
@@ -51,7 +63,7 @@ public class HumanFeeling : MonoBehaviour {
 		// Set random initial rotation
 		heading = Random.Range(0, 360);
 		transform.eulerAngles = new Vector3(0, heading, 0);
-		
+		transformZombie = false;
 		StartCoroutine(NewHeading());
 	}
 	IEnumerator NewHeading ()
@@ -285,7 +297,7 @@ public class HumanFeeling : MonoBehaviour {
 			//Debug.Log ("x: "+randomDirection.x + " y: "+randomDirection.z + " testmove: "+testmove + " maxmove: "+maxmove +" per:" + percentageWalk +"%");
 			
 		}
-		Debug.Log (" timeawlk "+timewalk + " counterTakeBack: "+countTakeBack +" percentageWalk: "+ percentageWalk);
+		//Debug.Log (" timeawlk "+timewalk + " counterTakeBack: "+countTakeBack +" percentageWalk: "+ percentageWalk);
 		if (activeBd == 1) {
 			//Vector3 a = transform.position - bdpos;
 			countTakeBack = countTakeBack - Time.deltaTime;
