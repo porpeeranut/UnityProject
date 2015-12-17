@@ -18,7 +18,6 @@ public class firstGun : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		magazineSound = GetComponent<AudioSource>();
 		audioClip = magazineSound.clip; 
-
 	}
 
 	void Update () {
