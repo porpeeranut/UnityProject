@@ -30,6 +30,10 @@ public class SoldierController : MonoBehaviour {
 				if (GetComponent<EnemyHealth>().isDead) {
 					return;
 				}
+				if (GameObject.FindGameObjectWithTag("playerstatus").GetComponent<PlayerHealth>().isDead) {
+					animator.SetBool ("victory", true);
+					return;
+				}
 				navAgent.transform.LookAt (player.position);
 				if (location.magnitude <= rangeToStopAtPlayer) {
 					RaycastHit hit1;
