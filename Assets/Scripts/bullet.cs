@@ -10,7 +10,7 @@ public class bullet : MonoBehaviour {
 	public int damage;
 
 	void Start () {
-		lifeTime = 1.5f;
+		lifeTime = 2.0f;
 		startTime = Time.time;
 		GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
 	}
