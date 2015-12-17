@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class punchBox : MonoBehaviour {
+public class bullet : MonoBehaviour {
 
 	float startTime;
 	float lifeTime;
 	float timer;
+	public float initialSpeed;
+	public int damage;
+
 	void Start () {
-		lifeTime = 1.0f;
+		lifeTime = 1.5f;
 		startTime = Time.time;
+		GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if(Time.time >= (startTime+lifeTime)){
 			Destroy(gameObject);
@@ -19,9 +22,8 @@ public class punchBox : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		
-		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Solider"))){
-			obj.GetComponent<EnemyHealth>().GetDamage(1);
+		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
+			obj.GetComponent<EnemyHealth>().GetDamage(damage);
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
 			obj.GetComponent<SoldierController>().foundPlayer(true);
