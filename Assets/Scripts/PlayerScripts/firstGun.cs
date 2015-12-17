@@ -30,6 +30,7 @@ public class firstGun : MonoBehaviour {
 	void  Shooting(){
 		RaycastHit screenRayInfo;
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height/2f, 0)), out screenRayInfo, 500)) {
+			Debug.Log(screenRayInfo.collider.tag);
 			transform.LookAt(screenRayInfo.point);
 			GameObject gunBullet = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
 		}

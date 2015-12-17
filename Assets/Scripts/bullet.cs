@@ -3,11 +3,12 @@ using System.Collections;
 
 public class bullet : MonoBehaviour {
 
+	public float initialSpeed;
+	public int damage;
+	public GameObject particleEffect;
 	float startTime;
 	float lifeTime;
 	float timer;
-	public float initialSpeed;
-	public int damage;
 
 	void Start () {
 		lifeTime = 2.0f;
@@ -28,6 +29,8 @@ public class bullet : MonoBehaviour {
 		if (obj.gameObject.CompareTag ("Soldier")) {
 			obj.GetComponent<SoldierController>().foundPlayer(true);
 		}
+		//Instantiate(particleEffect, transform.position, transform.rotation);
+		//Destroy(gameObject,audioClip.length);
 		Destroy(gameObject);
 	}
 }
