@@ -6,7 +6,7 @@ public class SoldierBulletSpawn : MonoBehaviour {
 	public GameObject bullet;
 	bool isShooting = false;
 	Transform gunPosition;
-	float missAngle = 4;
+	float missAngle = 5;
 
 	public void shoot() {
 		if (!isShooting){

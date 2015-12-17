@@ -28,8 +28,10 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
-			obj.GetComponent<EnemyHealth>().GetDamage(damage);
+		if ((obj.gameObject.CompareTag ("Human")) || (obj.gameObject.CompareTag ("Soldier"))) {
+			obj.GetComponent<EnemyHealth> ().GetDamage (damage);
+		} else if (obj.gameObject.CompareTag ("Player")) {
+			GameObject.FindGameObjectWithTag("playerstatus").GetComponent<PlayerHealth> ().GetDamage (damage);
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
 			obj.GetComponent<SoldierController>().foundPlayer(true);
