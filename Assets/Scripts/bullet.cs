@@ -7,12 +7,15 @@ public class bullet : MonoBehaviour {
 	float lifeTime;
 	float timer;
 	public float initialSpeed;
+	public int damage;
 
 	void Start () {
-		lifeTime = 1.5f;
-		startTime = Time.time;
-		GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
-	}
+
+			lifeTime = 2.0f;
+			startTime = Time.time;
+			GetComponent<Rigidbody> ().velocity = transform.forward * initialSpeed;
+
+		}
 
 	void Update () {
 		if(Time.time >= (startTime+lifeTime)){
@@ -21,15 +24,11 @@ public class bullet : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider obj){
-
-		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Solider"))){
-
-		Debug.Log ("ttt");
-
-			obj.GetComponent<EnemyHealth>().GetDamage(2);
+		if((obj.gameObject.CompareTag("Human")) || (obj.gameObject.CompareTag("Soldier"))){
+			obj.GetComponent<EnemyHealth>().GetDamage(damage);
 		}
 		if (obj.gameObject.CompareTag ("Soldier")) {
-			obj.GetComponent<SoldierController>().foundPlayer();
+			obj.GetComponent<SoldierController>().foundPlayer(true);
 		}
 		Destroy(gameObject);
 	}

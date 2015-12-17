@@ -77,6 +77,7 @@ public class PlayerControl : MonoBehaviour
 		cameraTransform = Camera.main.transform;
 		punchObject = GameObject.FindGameObjectWithTag("punch");
 
+
 		speedFloat = Animator.StringToHash("Speed");
 		jumpBool = Animator.StringToHash("Jump");
 		hFloat = Animator.StringToHash("H");
