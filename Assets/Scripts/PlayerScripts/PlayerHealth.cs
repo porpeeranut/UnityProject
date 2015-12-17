@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour {
 	public bool isDead;
 
 	void Awake () {
-		maxHealth = 1000;
+		maxHealth = 100;
 		health = maxHealth;
 		isDead = false;
 	}
@@ -33,6 +33,11 @@ public class PlayerHealth : MonoBehaviour {
 	void Die(){
 		GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetBool ("Die", true);
 		isDead = true;
+		Invoke("restartGame", 5.5f);
 		//Destroy(gameObject);
+	}
+
+	void restartGame () {
+		Application.LoadLevel("Home");
 	}
 }
