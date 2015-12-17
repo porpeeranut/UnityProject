@@ -34,7 +34,6 @@ public class humanTransform : MonoBehaviour {
 	public void AddTp(int boost){
 		
 		tp += boost;
-		Debug.Log (tp);
 		if(tp >= maxtp){
 			//	health = maxHealth;		
 			Transformation();

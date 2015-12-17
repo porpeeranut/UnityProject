@@ -19,7 +19,6 @@ public class Mpbar_script : MonoBehaviour {
 	void Update () 
 	{
 		mpbar.fillAmount = playerObject.GetComponent<PlayerTransform> ().ChangeTime / mpratio;
-		Debug.Log (mpratio);
 		if (mpbar.fillAmount <= 0.0f) 
 		{
 			mpbar.fillAmount=0.0f;
